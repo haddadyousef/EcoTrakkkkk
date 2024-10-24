@@ -661,7 +661,7 @@ class GameScene: SKScene, UITextFieldDelegate, CLLocationManagerDelegate {
     // Add this method to handle location updates
 
     func sendScore(name: String, score: Int, completion: @escaping (Bool) -> Void) {
-        guard let url = URL(string: "https://a827-174-165-215-17.ngrok-free.app/leaderboard") else {
+        guard let url = URL(string: "https://4ccb-174-165-215-17.ngrok-free.app/leaderboard") else {
             print("Invalid URL")
             completion(false)
             return
@@ -715,7 +715,7 @@ class GameScene: SKScene, UITextFieldDelegate, CLLocationManagerDelegate {
     }
     
     func fetchAndDisplayLeaderboard() {
-        guard let url = URL(string: "https://a827-174-165-215-17.ngrok-free.app/leaderboard") else {
+        guard let url = URL(string: "https://4ccb-174-165-215-17.ngrok-free.app/leaderboard") else {
             print("Invalid URL")
             return
         }
@@ -1202,7 +1202,7 @@ class GameScene: SKScene, UITextFieldDelegate, CLLocationManagerDelegate {
                     donateButton.setTitleColor(.white, for: .normal)
                     donateButton.backgroundColor = .green
                     donateButton.layer.cornerRadius = 10
-                    //donateButton.addTarget(self, action: #selector(self.donateCarbonCredits), for: .touchUpInside)
+                        donateButton.addTarget(self, action: #selector(self.donateCarbonCredits), for: .touchUpInside)
 
                     // Position the button closer to the profile view
                     donateButton.frame = CGRect(
@@ -1221,6 +1221,7 @@ class GameScene: SKScene, UITextFieldDelegate, CLLocationManagerDelegate {
                         donateButton.alpha = 1
                         view.backgroundColor = .black
                     }
+                    view.addSubview(donateButton)
                 }
 
                 // Update the carLabel
