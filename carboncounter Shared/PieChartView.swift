@@ -32,6 +32,15 @@ struct PieChartView: View {
     
     var slices: [(Double, Color)] {
         let total = Double(userEmissions + food + energy + goods)
+        if total == 0 {
+            // Return equal slices if all values are 0
+            return [
+                (0.25, .blue),
+                (0.25, .green),
+                (0.25, .orange),
+                (0.25, .red)
+            ]
+        }
         return [
             (Double(userEmissions) / total, .blue),
             (Double(food) / total, .green),
